@@ -1,6 +1,10 @@
 class Artist < ApplicationRecord
-	attr :artist, :bio, :song, :album
+	attr :artist, :bio, :album
+
+	validates :artist, :presence => true
+	validates :bio, :presence => true
+	validates :album, :presence => true
 
 	has_one :bio
-	has_many :songs
+	has_many :albums
 end

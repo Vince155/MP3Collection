@@ -1,7 +1,9 @@
 class Song < ApplicationRecord
 	attr :song, :artist, :album
 
-	has_one :bio
-	belongs_to :artist
+	validates :song, :presence => true
+	validates :artist, :presence => true
+	validates :album, :presence => true
+
 	belongs_to :album
 end
